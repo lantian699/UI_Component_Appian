@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/ico" href="cacib_logo.svg">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=no">
+	<title>CACIB DealMatrix360</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="resources/syntax/shCore.css">
+    <link rel="stylesheet" type="text/css" href="resources/demo.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/selectmin.css">
+    <style type="text/css" class="init">
+
+    </style>
+
+    <script src='APPIAN_JS_SDK_URI'></script>
+	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+    <script type="text/javascript" language="javascript" src="resources/syntax/shCore.js"></script>
+    <script type="text/javascript" language="javascript" src="resources/demo.js"></script>
+    <script type="text/javascript" language="javascript" class="init">
+
+
+        var dataSet = [
+            [20, 'Subvention publique', '9000', 'ABC Capital', '8.07%', 'Illimite', 'Actions privilegiees'],
+            [12, 'Dette senior', '980000', 'Ardian', '7.84%', 'Illimite', 'Garantie bancaire'],
+            [17, 'Pret relais', '370000', 'Societe Generale', '4.52%', '4 ans', 'Garantie bancaire'],
+            [11, 'Fonds propres', '6200000', 'Ile-de-France Region', '6.74%', '8 ans', 'Hypotheque sur actifs'],
+            [15, 'Pret relais', '74000000', 'Credit Agricole', '5.93%', 'Illimite', 'Hypotheque sur actifs'],
+            [18, 'Subvention publique', '33000', 'ABC Capital', '3.09%', '4 ans', 'Hypotheque sur actifs'],
+            [13, 'Dette senior', '57000', 'ABC Capital', '5.68%', '8 ans', 'Actions privilegiees'],
+            [14, 'Dette senior', '96000', 'Ardian', '3.51%', '8 ans', 'Hypotheque sur actifs'],
+            [11, 'Fonds propres', '84000000', 'Ardian', '7.41%', '4 ans', 'Garantie bancaire'],
+            [20, 'Dette senior', '8000000', 'Credit Agricole', '8.3%', '6 ans', 'Actifs de projet'],
+            [14, 'Dette mezzanine', '15000', 'Credit Agricole', '1.57%', '6 ans', 'Hypotheque sur actifs'],
+            [12, 'Dette senior', '81000', 'Ile-de-France Region', '5.33%', '6 ans', 'Actifs de projet'],
+            [13, 'Fonds propres', '620000', 'Credit Agricole', '1.61%', 'Illimite', 'Hypotheque sur actifs'],
+            [20, 'Dette mezzanine', '69000', 'Ardian', '8.51%', 'Illimite', 'Hypotheque sur actifs'],
+            [18, 'Dette senior', '94000000', 'ABC Capital', '6.05%', 'Illimite', 'Actions privilegiees'],
+            [15, 'Dette senior', '74000', 'Ile-de-France Region', '4.42%', '6 ans', 'Actifs de projet'],
+            [11, 'Fonds propres', '45000', 'Societe Generale', '6.7%', '6 ans', 'Garantie bancaire'],
+            [18, 'Fonds propres', '49000', 'BNP Paribas', '8.16%', '8 ans', 'Actions privilegiees'],
+            [19, 'Dette senior', '19000000', 'Credit Agricole', '7.35%', '6 ans', 'Actions privilegiees'],
+            [13, 'Dette mezzanine', '53000', 'Credit Agricole', '6.35%', '8 ans', 'Hypotheque sur actifs'],
+            [20, 'Subvention publique', '8000', 'ABC Capital', '3.17%', 'Illimite', 'Garantie bancaire'],
+            [13, 'Pret relais', '90000000', 'ABC Capital', '7.7%', 'Illimite', 'Hypotheque sur actifs'],
+            [11, 'Pret relais', '83000000', 'Ile-de-France Region', '9.1%', '4 ans', 'Garantie bancaire'],
+            [20, 'Pret relais', '17000000', 'ABC Capital', '5.55%', 'Illimite', 'Garantie bancaire'],
+            [17, 'Dette mezzanine', '84000000', 'Credit Agricole', '8.02%', '6 ans', 'Actifs de projet'],
+            [12, 'Dette mezzanine', '10000000', 'Ardian', '3.32%', '6 ans', 'Hypotheque sur actifs'],
+            [20, 'Dette mezzanine', '31000', 'BNP Paribas', '3.11%', 'Illimite', 'Actifs de projet'],
+            [18, 'Fonds propres', '57000000', 'Credit Agricole', '6.52%', '6 ans', 'Actions privilegiees'],
+            [12, 'Dette mezzanine', '47000000', 'Credit Agricole', '7.51%', '8 ans', 'Garantie bancaire'],
+            [11, 'Pret relais', '89000', 'Ile-de-France Region', '1.59%', '4 ans', 'Hypotheque sur actifs'],
+            [14, 'Subvention publique', '10000', 'ABC Capital', '4.97%', '8 ans', 'Hypotheque sur actifs'],
+            [18, 'Fonds propres', '27000', 'Credit Agricole', '3.84%', '8 ans', 'Hypotheque sur actifs'],
+            [16, 'Dette mezzanine', '19000000', 'Ardian', '6.41%', '4 ans', 'Actions privilegiees'],
+            [14, 'Dette senior', '54000', 'Credit Agricole', '5.01%', 'Illimite', 'Actions privilegiees'],
+            [13, 'Dette mezzanine', '91000', 'Ardian', '7.25%', '4 ans', 'Actifs de projet'],
+            [16, 'Pret relais', '14000000', 'Ardian', '2.95%', '4 ans', 'Garantie bancaire'],
+            [14, 'Pret relais', '80000000', 'Ardian', '2.97%', '6 ans', 'Hypotheque sur actifs'],
+            [13, 'Pret relais', '42000', 'Societe Generale', '3.46%', '8 ans', 'Garantie bancaire'],
+            [11, 'Pret relais', '69000000', 'Societe Generale', '3.78%', '4 ans', 'Garantie bancaire'],
+            [16, 'Fonds propres', '53000', 'Ile-de-France Region', '9.11%', 'Illimite', 'Hypotheque sur actifs'],
+            [17, 'Subvention publique', '74M', 'Credit Agricole', '5.6%', '4 ans', 'Actions privilegiees'],
+            [11, 'Dette mezzanine', '48000000', 'Ardian', '8.28%', '8 ans', 'Garantie bancaire'],
+            [16, 'Fonds propres', '49000', 'Ile-de-France Region', '7.34%', '6 ans', 'Garantie bancaire'],
+            [15, 'Pret relais', '72000', 'Credit Agricole', '4.56%', '8 ans', 'Garantie bancaire'],
+            [17, 'Fonds propres', '6000000', 'Societe Generale', '6.81%', '8 ans', 'Actions privilegiees'],
+            [20, 'Dette mezzanine', '20000000', 'Societe Generale', '9.46%', '6 ans', 'Actions privilegiees'],
+            [18, 'Dette senior', '62000', 'Ardian', '4.91%', '8 ans', 'Actions privilegiees'],
+            [13, 'Fonds propres', '74000', 'Societe Generale', '6.4%', '8 ans', 'Actifs de projet'],
+            [20, 'Pret relais', '8000000', 'Credit Agricole', '3.64%', 'Illimite', 'Actions privilegiees'],
+            [15, 'Pret relais', '50000', 'Credit Agricole', '1.83%', 'Illimite', 'Hypotheque sur actifs'],
+        ];
+
+
+                $(document).ready(function() {
+                    table = $('#example').DataTable( {
+                        data: dataSet,
+                        columns: [
+                            { title: "Deal ID" },
+                            { title: "Type de Financement" },
+                            { title: "Montant (EUR)" },
+                            { title: "Source" },
+                            { title: "Taux Interet" },
+                            { title: "Duree" },
+                            { title: "Garanties" }
+                        ]
+                    } );
+                    $('#example tbody').on( 'click', 'tr', function () {
+                        $(this).toggleClass('selected');
+                    } );
+
+                    $('#button').click( function () {
+                        var selectedData = table.rows('.selected').data()
+                        var total = 0
+                        selectedData.each(function (value, index) {
+                            var amount = parseInt(value[2]);
+                            total += amount
+
+                        });
+                        console.log(total);
+                        Appian.Component.saveValue("onChange", total);
+                    } );
+
+                    let inputValue = '';
+                    Appian.Component.onNewValue(function (newValues) {
+                          inputValue = newValues.idDeal;
+                          table.column(0).search(inputValue).draw();
+                        console.log("New value received: " + inputValue);
+                    });
+
+
+                } );
+	</script>
+</head>
+<body class="dt-example">
+<div class="container" style="margin-top: 30px; overflow: auto; height: 100%">
+    <section>
+
+
+        <div class="app-description" style="margin-top: 50px; display: flex; align-items: center; justify-content: center; gap: 20px;">
+            <img src="cacib_logo.svg" alt="App Logo" style="width: 80px; height: autoatrix360"/>
+        </div>
+
+        <div style="font-weight: bold; font-size: 3em;margin-top: 60px;">Deal Matrix 360</div>
+
+
+        <h2>Un tableau de bord dynamique pour visualiser les operations financieres structurees et les compositions de financement</h2>
+
+        <p>
+            <strong>DealMatrix360</strong> est un tableau de bord d intelligence financiere simule, concu pour presenter la composition de transactions structurees a travers divers instruments de financement.
+            Cet outil permet aux utilisateurs d explorer des donnees fictives representant differentes strategies de financement, incluant la dette senior, la dette mezzanine, les fonds propres, les prets relais et les subventions publiques.
+        </p>
+
+        <p>
+            Grace a une interface intuitive alimentee par des tableaux dynamiques, les utilisateurs peuvent :
+        </p>
+        <ul>
+            <li>Visualiser plusieurs tranches de financement liees a un identifiant de transaction unique.</li>
+            <li>Analyser les taux d interet, les durees et les garanties associees a chaque type de financement.</li>
+            <li>Simuler la structuration de transactions reelles a des fins pedagogiques, de prototypage ou de demonstration.</li>
+        </ul>
+
+        <p>
+            Que vous testiez des composants d interface, developpiez des prototypes financiers ou presentiez des scenarios d investissement fictifs,
+            <strong>DealMatrix360</strong> offre un environnement flexible et engageant pour explorer des transactions structurees.
+        </p>
+
+
+
+        <div class="demo-html"></div>
+        <div class="demo-html">
+            <button id="button" style="margin-top: 30px; margin-bottom: 30px">VALIDER LA SELECTION</button>
+        </div>
+        <table id="example" class="display" width="100%"></table>
+
+    </section>
+</div>
+</body>
+</html>

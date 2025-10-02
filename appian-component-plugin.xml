@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appian-component-plugin name="CACIB POC Component Plug-in" key="com.capgemini.cacib.poc.plugin">
+  <plugin-info>
+    <description>CACIB POC Component Plugin</description>
+    <vendor name="Capgemini" url="https://capgemini.com" />
+    <support supported="true" email="tian.b.lan@capgemini.com" url="https://capgemini.com" />
+    <version>2.4.0</version>
+  </plugin-info>
+
+  <component rule-name="cacibPocUI" version="2.4.0">
+    <sdk-version>2.0.0</sdk-version>
+    <icon-file>cacib_logo.svg</icon-file>
+      <parameter>
+          <name>idDeal</name>
+          <category>input-only</category>
+          <type>Text</type>
+      </parameter>
+      <parameter>
+          <name>onChange</name>
+          <category>event</category>
+      </parameter>
+    <html-entry-point>index.html</html-entry-point>
+    <supported-user-agents>chrome firefox ie11 edge safari mobile</supported-user-agents>
+  </component>
+
+</appian-component-plugin>
